@@ -1,8 +1,13 @@
 #![no_std]
 
 use verify::verify_test;
+use runtime::print;
 
 #[no_mangle]
 fn main() {
-    verify_test();
+    if verify_test() {
+        print!("Yeeeeeeeeeeet");
+    } else {
+        panic!("Oh noes");
+    }
 }

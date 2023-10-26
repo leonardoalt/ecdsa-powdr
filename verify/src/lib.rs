@@ -19,7 +19,7 @@ struct RecoveryTestVector {
     recid: RecoveryId,
 }
 
-pub fn verify_test() {
+pub fn verify_test() -> bool {
     const RECOVERY_TEST_VECTORS: &[RecoveryTestVector] = &[
         // Recovery ID 0
         RecoveryTestVector {
@@ -50,6 +50,10 @@ pub fn verify_test() {
         let sig = Signature::try_from(vector.sig.as_slice()).unwrap();
         let recid = vector.recid;
         let pk = VerifyingKey::recover_from_digest(digest, &sig, recid).unwrap();
-        //assert_eq!(&vector.pk[..], EncodedPoint::from(&pk).as_bytes());
+        if &vector.pk[..] != EncodedPoint::from(&pk).as_bytes() {
+            return false;
+        }
     }
+
+    return true;
 }
