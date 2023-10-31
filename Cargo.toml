@@ -2,9 +2,9 @@
 
 resolver = "2"
 
-members = [
-    "verify",
-    "powdr",
-    "bin",
-]
-default-members = [ "bin" ]
+members = ["verify", "riscv-bin", "powdr", "bin"]
+default-members = ["bin"]
+
+[profile.release-with-symbols]
+inherits = "release"
+debug = true
