@@ -1,14 +1,12 @@
 #![no_std]
 #![no_main]
 
+extern crate runtime;
 use verify::verify_test_verify;
-use runtime::print;
 
 #[no_mangle]
-fn main() {
-    if verify_test_verify() {
-        print!("Yeeeeeeeeeeet");
-    } else {
+pub fn main() {
+    if !verify_test_verify() {
         panic!("Oh noes");
     }
 }

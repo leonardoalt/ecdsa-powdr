@@ -2,14 +2,10 @@
 
 use hex_literal::hex;
 use k256::{
-    ecdsa::{RecoveryId, Signature, VerifyingKey, signature::Verifier},
+    ecdsa::{signature::Verifier, RecoveryId, Signature, VerifyingKey},
     EncodedPoint,
 };
 use sha2::{Digest, Sha256};
-
-pub fn main() {
-    verify_test_recover();
-}
 
 /// Signature recovery test vectors
 struct RecoveryTestVector {
@@ -32,16 +28,16 @@ const RECOVERY_TEST_VECTORS: &[RecoveryTestVector] = &[
     },
     // Recovery ID 1
     /*
-       RecoveryTestVector {
-       pk: hex!("036d6caac248af96f6afa7f904f550253a0f3ef3f5aa2fe6838a95b216691468e2"),
-       msg: b"example message",
-       sig: hex!(
-       "46c05b6368a44b8810d79859441d819b8e7cdc8bfd371e35c53196f4bcacdb51
-       35c7facce2a97b95eacba8a586d87b7958aaf8368ab29cee481f76e871dbd9cb"
-       ),
-       recid: RecoveryId::new(true, false),
-       },
-       */
+    RecoveryTestVector {
+    pk: hex!("036d6caac248af96f6afa7f904f550253a0f3ef3f5aa2fe6838a95b216691468e2"),
+    msg: b"example message",
+    sig: hex!(
+    "46c05b6368a44b8810d79859441d819b8e7cdc8bfd371e35c53196f4bcacdb51
+    35c7facce2a97b95eacba8a586d87b7958aaf8368ab29cee481f76e871dbd9cb"
+    ),
+    recid: RecoveryId::new(true, false),
+    },
+    */
 ];
 
 pub fn verify_test_verify() -> bool {
