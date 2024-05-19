@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-extern crate runtime;
+extern crate powdr_riscv_runtime;
 use verify::verify_test_verify;
 
 #[no_mangle]

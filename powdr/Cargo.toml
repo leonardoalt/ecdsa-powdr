@@ -5,4 +5,4 @@ edition = "2021"
 
 [dependencies]
 verify = { path = "../verify" }
-runtime = { path = "../../powdr/riscv/runtime" }
+powdr-riscv-runtime = { path = "../../powdr/riscv-runtime" }

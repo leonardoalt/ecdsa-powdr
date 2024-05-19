@@ -4,5 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-riscv-rt = "0.6"
+riscv-rt = "0.12.2"
 powdr = { path = "../powdr" }
